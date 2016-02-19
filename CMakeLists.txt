@@ -28,7 +28,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(VkCppGenerator)
 
-if(NOT EXISTS "${CMAKE_SOURCE_DIR}/tinyxml/tinyxml.cpp")
+if(NOT EXISTS "${CMAKE_SOURCE_DIR}/../tinyxml/tinyxml.cpp")
   message(FATAL_ERROR, "TinyXML is missing. Please download the latest version from http://www.grinninglizard.com/tinyxml/index.html and put the sources in a folder named 'tinyxml'")
 endif()
 
@@ -40,15 +40,15 @@ set(SOURCES
 )
 
 set(TINYXML_SOURCES
-  tinyxml/tinyxml.cpp
-  tinyxml/tinyxmlerror.cpp
-  tinyxml/tinyxmlparser.cpp
-  tinyxml/tinystr.cpp
+  ../tinyxml/tinyxml.cpp
+  ../tinyxml/tinyxmlerror.cpp
+  ../tinyxml/tinyxmlparser.cpp
+  ../tinyxml/tinystr.cpp
 )
 
 set(TINYXML_HEADERS
-  tinyxml/tinyxml.h
-  tinyxml/tinystr.h
+  ../tinyxml/tinyxml.h
+  ../tinyxml/tinystr.h
 )
 
 source_group(headers FILES ${HEADERS})
@@ -66,4 +66,4 @@ add_executable(VkCppGenerator
 
 set_property(TARGET VkCppGenerator PROPERTY CXX_STANDARD 11)
 
-target_include_directories(VkCppGenerator PRIVATE "${CMAKE_SOURCE_DIR}/tinyxml")
+target_include_directories(VkCppGenerator PRIVATE "${CMAKE_SOURCE_DIR}/../tinyxml")
