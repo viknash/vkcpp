@@ -11390,13 +11390,6 @@ namespace vk
     VkSurfaceFormatKHR m_surfaceFormatKHR;
   };
 
-  typedef Flags<DisplayPlaneAlphaFlagBitsKHR> DisplayPlaneAlphaFlagsKHR;
-
-  inline DisplayPlaneAlphaFlagsKHR operator|( DisplayPlaneAlphaFlagBitsKHR bit0, DisplayPlaneAlphaFlagBitsKHR bit1 )
-  {
-    return DisplayPlaneAlphaFlagsKHR( bit0 ) | bit1;
-  }
-
   enum class CompositeAlphaFlagBitsKHR
   {
     eOpaque = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR,
@@ -13676,6 +13669,13 @@ namespace vk
     ePerPixel = VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR,
     ePerPixelPremultiplied = VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR
   };
+
+  typedef Flags<DisplayPlaneAlphaFlagBitsKHR> DisplayPlaneAlphaFlagsKHR;
+
+  inline DisplayPlaneAlphaFlagsKHR operator|( DisplayPlaneAlphaFlagBitsKHR bit0, DisplayPlaneAlphaFlagBitsKHR bit1 )
+  {
+    return DisplayPlaneAlphaFlagsKHR( bit0 ) | bit1;
+  }
 
   class DisplayPlaneCapabilitiesKHR
   {
